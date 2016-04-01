@@ -1,0 +1,36 @@
+<!-- playlist.html -->
+
+<!-- <div>
+	<form>
+		<input type='text' ng-model='input1' />
+		<button>Create playlist!</button>
+	</form>
+</div> -->
+
+
+<div class="well">
+
+  <form class="form-horizontal" name="newPlaylistFormCtrl">
+    <fieldset>
+      <legend>New Playlist: {{ name }}</legend>
+      <div class="form-group">
+        <label class="col-xs-2 control-label">Name</label>
+        <div class="col-xs-10">
+          <input name="name" class="form-control" type="text" ng-model="name" ng-required="true" ng-maxlength="16">
+        </div>
+      </div>
+        
+    <div ng-messages="newPlaylistFormCtrl.name.$error" role="alert">
+      <div ng-message="maxlength">Too long!!!</div>
+     <!--  <div ng-message="required">Please enter a valid name</div> -->
+    </div>
+
+
+      <div class="form-group">
+        <div class="col-xs-10 col-xs-offset-2">
+          <button type="submit" class="btn btn-success" ng-click='create(name)' ng-disabled="newPlaylistFormCtrl.$invalid">Create Playlist</button>
+        </div>
+      </div>
+    </fieldset>
+  </form>
+</div>
